@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>登录页</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="body_bg">
@@ -18,15 +19,15 @@
       <div class="panel-body">
         <form class="form-horizontal">
           <div class="form-group">
-            <label for="username" class="col-md-3 control-label">用户名:</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+            <label for="username" class="col-sm-3 control-label">用户名:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
             </div>
           </div>
           <div class="form-group">
-            <label for="password" class="col-md-3 control-label">密　码:</label>
-            <div class="col-md-9">
-              <input type="password" class="form-control" id="password" placeholder="请输入密码">
+            <label for="password" class="col-sm-3 control-label">密　码:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
             </div>
           </div>
           <div class="form-group">
@@ -39,13 +40,13 @@
       </div>
     </div>
   </div>
-  
 
 </div>
 
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/login.js"></script>
 
