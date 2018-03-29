@@ -2,8 +2,7 @@
  * Created by Jepson on 2018/3/29.
  */
 
-// 1. 等待页面加载完成
-// 2. 防止全局变量污染
+// 等待页面dom结构加载, 防止全局变量污染
 $(function() {
   
   /*
@@ -12,7 +11,7 @@ $(function() {
    *   1. 用户名不能为空, 且长度 2-6 位
    *   2. 密码不能为空, 密码的长度为 6-12 位
    * */
-  $("form").bootstrapValidator({
+  $("#form").bootstrapValidator({
     
     // 配置校验字段
     fields: {
@@ -59,5 +58,38 @@ $(function() {
     }
     
   });
+  
+  
+  // 2. 给表单注册一个校验成功的事件, 成功的时候阻止表单的默认提交
+  //    使用 ajax 进行提交
+  $("#form").on("success.form.bv", function( e ) {
+    // 阻止浏览器默认行为
+    e.preventDefault();
+  
+    // 发送 ajax 请求登录
+    // dataType: "json"
+    // 如果没设置 jQuery 会自动识别  text/html, text/json
+    $.ajax({
+      type: "post",
+      url: "/employee/employeeLogin",
+      data: $("#form").serialize(),
+      dataType: "json",
+      success: function( data ) {
+        console.log(data);
+        if ( data.error === 1000 ) {
+          alert( "用户名错误" );
+        }
+        
+        if ( data.error === 1001 ) {
+          alert( "密码错误" );
+        }
+        
+        if ( data.success ) {
+          location.href="index.html";
+        }
+      }
+    })
+
+  })
 
 });
