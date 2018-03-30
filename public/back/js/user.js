@@ -25,7 +25,6 @@ $(function() {
         var htmlStr = template("userTpl", data);
         $('.main_body tbody').html( htmlStr );
       
-      
         // 渲染分页
         $('#paginator').bootstrapPaginator({
           // bootstrap使用的版本
@@ -41,6 +40,38 @@ $(function() {
       }
     });
   }
-
+  
+  
+  // 启用禁用功能
+  $('.main_body tbody').on("click", ".btn", function() {
+    // 1 表示用户启用  0 表示用户禁用
+    var isDelete = $(this).hasClass("btn-success") ? 1 : 0;
+    var userid = $(this).parent().data("id");
+  
+    // 显示模态框
+    $('#userModal').modal();
+    
+    // 防止重复注册, 可以先解绑再注册
+    $('#submitBtn').off().on("click", function() {
+      $.ajax({
+        type: "post",
+        url: "/user/updateUser",
+        data: {
+          id: userid,
+          isDelete: isDelete
+        },
+        success: function( data ) {
+          if ( data.success ) {
+            // 关闭模态框
+            $('#userModal').modal("hide");
+            // 重新渲染页面
+            render();
+          }
+        }
+      })
+    })
+  });
+  
+  
   
 });
