@@ -2,9 +2,7 @@
  * Created by Jepson on 2018/3/29.
  */
 
-// 等待页面dom结构加载, 防止全局变量污染
 $(function() {
-  
   /*
    * 1. 校验表单
    * 要求:
@@ -66,13 +64,12 @@ $(function() {
     
   });
   
-  
   // 2. 给表单注册一个校验成功的事件, 成功的时候阻止表单的默认提交
   //    使用 ajax 进行提交
   $("#form").on("success.form.bv", function( e ) {
     // 阻止浏览器默认行为
     e.preventDefault();
-  
+    
     // 发送 ajax 请求登录
     // dataType: "json"
     // 如果没设置 jQuery 会自动识别  text/html, text/json
@@ -99,14 +96,12 @@ $(function() {
         }
       }
     })
-
+    
   })
-  
   
   // 3. 重置表单功能
   $("[type='reset']").on("click", function( e ) {
     // resetForm 传 true 表示不仅验证重置, 表单内容也重置
     $("#form").data('bootstrapValidator').resetForm(true);
   })
-
-});
+})
