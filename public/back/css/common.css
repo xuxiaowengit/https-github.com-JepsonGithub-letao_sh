@@ -108,6 +108,14 @@ a:link, a:visited, a:hover, a:active {
   padding-top: 50px;
   transition: all 1s;
 }
+/* 切换效果 */
+.main.menuchange {
+  padding-left: 0;
+}
+.main.menuchange .main_top {
+  padding-left: 0;
+}
+
 .main_top {
   position: fixed;
   left: 0;
@@ -117,6 +125,7 @@ a:link, a:visited, a:hover, a:active {
   background-color: #3c8dbc;
   padding-left: 180px;
   transition: all 1s;
+  z-index: 666;
 }
 .main_top a {
   width: 50px;
@@ -129,12 +138,9 @@ a:link, a:visited, a:hover, a:active {
 .main_content .breadcrumb {
   margin-top: 20px;
 }
-
-/* 切换效果 */
-.main.menuchange {
-  padding-left: 0;
-}
-.main.menuchange .main_top {
-  padding-left: 0;
+.main_body .charts_1,
+.main_body .charts_2{
+  width: 45%;
+  height: 400px;
 }
 /*------- main 结束 ------*/
