@@ -31,7 +31,6 @@ $(function() {
           bootstrapMajorVersion: 3,
           currentPage: data.page, //当前页
           totalPages: Math.ceil( data.total / data.size ), //总页数
-          size: "small",
           onPageClicked:function(a, b, c, page){
             currentPage = page;
             render();
@@ -40,7 +39,6 @@ $(function() {
       }
     });
   }
-  
   
   // 启用禁用功能
   $('.main_body tbody').on("click", ".btn", function() {
@@ -71,7 +69,5 @@ $(function() {
       })
     })
   });
-  
-  
   
 });
