@@ -26,6 +26,9 @@ a:link, a:visited, a:hover, a:active {
 .mt_150 {
   margin-top: 150px;
 }
+.color-red {
+  color: #A94442;
+}
 /*------- 公共样式 结束 ------*/
 
 /*------- aside 开始 ------*/
