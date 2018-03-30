@@ -1,4 +1,20 @@
 @charset "UTF-8";
+/*------- 公共样式 开始 ------*/
+html, body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+/*lv ha*/
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .body_bg {
   background-color: #222D32;
 }
@@ -10,3 +26,63 @@
 .mt_150 {
   margin-top: 150px;
 }
+/*------- 公共样式 结束 ------*/
+/*------- lt_aside 侧边栏 开始 ------*/
+.aside {
+  width: 180px;
+  height: 100%;
+  background-color: #222D32;
+}
+
+.aside_brand {
+  height: 50px;
+}
+.aside_brand a {
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  background-color: #367FA9;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+.aside_user {
+  height: 150px;
+}
+.aside_user img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.aside_user p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.aside_nav li a {
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  color: #ccc;
+  padding-left: 30px;
+  border-left: 3px solid transparent;
+}
+.aside_nav li i {
+  margin: 0 5px;
+}
+.aside_nav a.current {
+  color: #fff;
+  border-left: 3px solid #006699;
+  background-color: #1d1f21;
+}
+.aside_nav .child a {
+  padding-left: 50px;
+}
+/*------- lt_aside 侧边栏 结束 ------*/

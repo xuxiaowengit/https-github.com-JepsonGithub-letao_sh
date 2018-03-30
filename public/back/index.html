@@ -2,11 +2,51 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>登录页</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 
-hello 我是 index 页面
+<div class="aside">
+  <!-- 标题 -->
+  <div class="aside_brand">
+    <a href="#">黑马19期</a>
+  </div>
+  
+  <!-- 用户 -->
+  <div class="aside_user">
+    <img src="images/default.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  
+  <!-- 导航 -->
+  <div class="aside_nav">
+    <ul>
+      <li><a class="current" href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+      <li>
+        <a href="javascript:;"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+        <div class="child">
+          <a href="first.html">一级分类</a>
+          <a href="second.html">二级分类</a>
+        </div>
+      </li>
+      <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="main">
+
+</div>
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
 
 </body>
 </html>
