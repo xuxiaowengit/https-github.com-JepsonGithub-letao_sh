@@ -18,4 +18,17 @@ $( document ).ajaxStop( function() {
     // 进度条关闭
     NProgress.done();
   }, 500);
-})
+});
+
+
+// 二级分类显示隐藏效果
+$('.aside_category').click(function() {
+  $(this).next().stop().slideToggle();
+});
+
+
+// 菜单栏隐藏效果
+$('.icon_menu').click(function() {
+  $('.aside').toggleClass("menuchange");
+  $(".main").toggleClass("menuchange");
+});
