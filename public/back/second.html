@@ -56,7 +56,34 @@
   
       <!-- 内容 -->
       <div class="main_body">
-  
+        <button class="btn btn-default mb_20" id="addModalBtn">添加分类</button>
+    
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th width="10%">序号</th>
+              <th width="30%">一级分类名称</th>
+              <th width="30%">二级分类名称</th>
+              <th width="30%">二级分类LOGO</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- 挖个坑 -->
+            <!--<tr>-->
+              <!--<td>1</td>-->
+              <!--<td>女士馆</td>-->
+              <!--<td>阿萨德2</td>-->
+              <!--<td><img src="images/none.png" height="50"></td>-->
+            <!--</tr>-->
+          </tbody>
+        </table>
+    
+        <div class="text-right">
+          <!-- 分页标签 -->
+          <ul id="paginator">
+      
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -85,11 +112,25 @@
   </div>
 </div>
 
+<script type="text/html" id="tpl">
+  {{ each rows v i }}
+    <tr>
+      <td>{{ (page-1)*size + i+1 }}</td>
+      <td>{{ v.categoryName }}</td>
+      <td>{{ v.brandName }}</td>
+      <td><img src="{{ v.brandLogo ? v.brandLogo : 'images/none.png' }}" height="50"></td>
+    </tr>
+  {{ /each }}
+</script>
+
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+
 <script src="js/common.js"></script>
 <script src="js/second.js"></script>
 
