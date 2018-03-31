@@ -68,6 +68,9 @@ $(function() {
     $('#dropdownText').text( selectText );
     // 设置选择的一级分类id
     $('[name="categoryId"]').val( id );
+    
+    // 设置一级分类校验状态
+    $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID")
   });
   
   
@@ -81,11 +84,59 @@ $(function() {
       $('#imgBox img').attr("src", picUrl);
       // 设置 picUrl 给隐藏域, 用于表单提交
       $('[name="brandLogo"]').val(picUrl);
+      
+      // 设置上传图片校验状态
+      $("#form").data("bootstrapValidator").updateStatus("brandLogo", "VALID");
     }
   });
   
   
   // 5. 表单校验功能
-  // $('#form')
+  $('#form').bootstrapValidator({
+    
+    // 重置排除项
+    excluded: [],
+    
+    // 指定校验小图标
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    
+    // 指定校验字段
+    fields: {
+      categoryId: {
+        // 校验规则
+        validators: {
+          notEmpty: {
+            message: "请选择一级分类"
+          }
+        }
+      },
+  
+      brandName: {
+        // 校验规则
+        validators: {
+          notEmpty: {
+            message: "请输入二级分类名称"
+          }
+        }
+      },
+  
+      brandLogo: {
+        // 校验规则
+        validators: {
+          notEmpty: {
+            message: "请选择一张图片"
+          }
+        }
+      }
+      
+    }
+  });
+  
+  
+  
 
 });
