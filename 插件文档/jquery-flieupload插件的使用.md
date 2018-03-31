@@ -40,6 +40,6 @@ $("#fileupload").fileupload({
       done:function (e, data) {
         console.log(data);
       }
-    });
+});
 ```
 

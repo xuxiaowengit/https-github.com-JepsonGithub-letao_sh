@@ -18,7 +18,6 @@ $(function() {
         console.log(data);
         var htmlStr = template( "firstTpl", data );
         $('.main_body tbody').html( htmlStr );
-        
         $('#paginator').bootstrapPaginator({
           // 指定版本号
           bootstrapMajorVersion: 3,
@@ -36,7 +35,7 @@ $(function() {
   }
   
   // 显示添加模态框
-  $('#addModalBtn').click(function() {
+  $('#addBtn').click(function() {
     $("#addFirstModal").modal();
   });
   
