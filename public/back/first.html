@@ -57,7 +57,7 @@
   
       <!-- 内容 -->
       <div class="main_body">
-        <button class="btn btn-default mb_20" id="btnAdd">添加分类</button>
+        <button class="btn btn-default mb_20" id="addModalBtn">添加分类</button>
         
         <table class="table table-bordered table-hover">
           <thead>
@@ -84,6 +84,28 @@
 </div>
 <!-- main 结束 -->
 
+<!-- 添加分类模态框 -->
+<div class="modal fade" id="addFirstModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form id="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="请输入一级分类的名称" name="categoryName">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary" id="addSubmitBtn">添加</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 <!-- 退出模态框 -->
