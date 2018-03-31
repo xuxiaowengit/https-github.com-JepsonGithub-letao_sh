@@ -78,30 +78,26 @@
 + 请求方式
   POST  
 + 参数说明
-| 参数名称     | 是否必须 | 说明    |
-| -------- | ---- | ----- |
-| proName  | 是    | 产品名称  |
-| oldPrice | 是    | 老价格   |
-| price    | 是    | 价格    |
-| proDesc  | 是    | 产品描述  |
-| size     | 是    | 产品尺寸  |
-| statu    | 是    | 产品上下架 |
-| num      | 是    | 用户库存  |
-| brandId  | 是    | 归属品牌  |
-|          |      |       |
-除了上述的参数列表外，还需要需要在参数的后面拼接上图片的名称和地址
+| 参数名称     | 是否必须 | 说明             |
+| -------- | ---- | -------------- |
+| proName  | 是    | 产品名称           |
+| oldPrice | 是    | 老价格            |
+| price    | 是    | 价格             |
+| proDesc  | 是    | 产品描述           |
+| size     | 是    | 产品尺寸           |
+| statu    | 否    | 产品上下架, 默认上架(1) |
+| num      | 是    | 用户库存           |
+| brandId  | 是    | 归属品牌           |
+| picName1 | 是    | 第1张图片的 名称      |
+| picAddr1 | 是    | 第1张图片的 地址      |
+| picName2 | 是    | 第2张图片的 名称      |
+| picAddr2 | 是    | 第2张图片的 地址      |
+| picName3 | 是    | 第3张图片的 名称      |
+| picAddr3 | 是    | 第3张图片的 地址      |
 
-```javascript
-&picName1="1.jpg"&picAddr1="images/1.jpg"
-&picName2="2.jpg"&picAddr2="images/2.jpg"
-&picName3="3.jpg"&picAddr3="images/3.jpg"
-```
+备注: 需要上传 3 张图片, 做手机端的轮播效果
 
-完整版参数：
-
-```javascript
-brandId=9&proName=11&proDesc=22&num=33&size=44-55&oldPrice=55&price=66&statu=1&brandLogo=&picName1=d6509a60-d0c9-11e7-8835-a11e94d39747.jpg&picAddr1=/upload/product/d6509a60-d0c9-11e7-8835-a11e94d39747.jpg&picName2=d6509a61-d0c9-11e7-8835-a11e94d39747.jpg&picAddr2=/upload/product/d6509a61-d0c9-11e7-8835-a11e94d39747.jpg&picName3=d6509a62-d0c9-11e7-8835-a11e94d39747.jpg&picAddr3=/upload/product/d6509a62-d0c9-11e7-8835-a11e94d39747.jpg
-```
+​			
 
 + 返回说明
 | 参数      | 说明   |
@@ -130,12 +126,10 @@ brandId=9&proName=11&proDesc=22&num=33&size=44-55&oldPrice=55&price=66&statu=1&b
 | ------- | ---- |
 | success | 注册状态 |
 | error   | 操作失败 |
-+ 示例
-```javascript
-//success
-[{"picName":"24-1.png","picAddr":"product/24-1.png"},{"picName":"24-1.png","picAddr":"product/24-1.png"}]
-```
+
+
 ### query-product-detail-list
+
 + 接口名称
   产品列表查询 （需要登录）
 + 接口地址
