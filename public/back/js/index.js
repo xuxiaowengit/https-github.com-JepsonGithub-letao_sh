@@ -2,8 +2,7 @@
  * Created by Jepson on 2018/3/30.
  */
 
-$(function() {
-
+require(["echarts"], function( echarts ) {
   // 第一个图表: 柱状图
   // 1. 准备 dom
   var eharts_1 = echarts.init(document.querySelector(".charts_1"));

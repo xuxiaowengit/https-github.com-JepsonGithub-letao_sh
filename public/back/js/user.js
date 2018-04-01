@@ -1,9 +1,7 @@
 /**
  * Created by Jepson on 2018/3/30.
  */
-
-$(function() {
-
+require(["jquery", "template", "bootstrapValidator", "bootstrap-paginator"], function($, template) {
   // 发送 ajax 请求, 获取用户数据, 渲染到页面中
   var currentPage = 1;
   var pageSize = 5;
@@ -24,7 +22,7 @@ $(function() {
         // 在模板中可以直接使用数据对象中的所有属性
         var htmlStr = template("userTpl", data);
         $('.main_body tbody').html( htmlStr );
-      
+        
         // 渲染分页
         $('#paginator').bootstrapPaginator({
           // bootstrap使用的版本
@@ -45,7 +43,7 @@ $(function() {
     // 1 表示用户启用  0 表示用户禁用
     var isDelete = $(this).hasClass("btn-success") ? 1 : 0;
     var userid = $(this).parent().data("id");
-  
+    
     // 显示模态框
     $('#userModal').modal();
     
@@ -69,5 +67,4 @@ $(function() {
       })
     })
   });
-  
-});
+})

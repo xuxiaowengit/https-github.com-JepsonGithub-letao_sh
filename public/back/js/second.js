@@ -1,9 +1,7 @@
 /**
  * Created by Jepson on 2018/3/31.
  */
-
-$(function() {
-
+require(["jquery", "template", "bootstrapValidator", "bootstrap-paginator", "jquery.ui.widget", "jquery.fileupload"], function($, template) {
   var currentPage = 1;
   var pageSize = 5;
   
@@ -114,7 +112,7 @@ $(function() {
           }
         }
       },
-  
+      
       brandName: {
         // 校验规则
         validators: {
@@ -123,7 +121,7 @@ $(function() {
           }
         }
       },
-  
+      
       brandLogo: {
         // 校验规则
         validators: {
@@ -140,9 +138,9 @@ $(function() {
   // 6. 表单提交
   $('#form').on("success.form.bv", function( e ) {
     e.preventDefault();
-  
+    
     console.log($('#form').serialize());
-  
+    
     $.ajax({
       type: "post",
       url: "/category/addSecondCategory",
@@ -168,5 +166,4 @@ $(function() {
     })
     
   })
-
-});
+})

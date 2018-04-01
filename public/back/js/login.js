@@ -2,7 +2,7 @@
  * Created by Jepson on 2018/3/29.
  */
 
-$(function() {
+require(["jquery", "bootstrapValidator"], function($) {
   /*
    * 1. 校验表单
    * 要求:
@@ -104,4 +104,4 @@ $(function() {
     // resetForm 传 true 表示不仅验证重置, 表单内容也重置
     $("#form").data('bootstrapValidator').resetForm(true);
   })
-})
+});
