@@ -17,7 +17,6 @@ $(function () {
       console.log(info);
       $(".userinfo").html( template("tpl", info) );
 
-
     }
   });
 

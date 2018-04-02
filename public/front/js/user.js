@@ -15,8 +15,7 @@ $(function () {
       
       //直接渲染用户信息
       console.log(data);
-      $(".userdata").html( template("tpl", data) );
-      
+      $(".userinfo").html( template("tpl", data) );
       
     }
   });
