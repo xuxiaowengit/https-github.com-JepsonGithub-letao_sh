@@ -1,7 +1,7 @@
 /**
  * Created by Jepson on 2018/3/31.
  */
-require(["jquery", "template", "bootstrapValidator", "bootstrap-paginator", "jquery.ui.widget", "jquery.fileupload"], function($, template) {
+require(["jquery", "template", "bootstrapValidator", "bootstrap-paginator", "jquery.fileupload"], function($, template) {
   var currentPage = 1;
   var pageSize = 5;
   

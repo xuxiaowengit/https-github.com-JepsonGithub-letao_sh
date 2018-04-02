@@ -2,8 +2,7 @@
  * Created by Jepson on 2018/3/31.
  */
 
-$(function() {
-
+require(["jquery", "template", "bootstrapValidator", "bootstrap-paginator", "jquery.fileupload"], function( $, template ) {
   var currentPage = 1;
   var pageSize = 5;
   var imgArr = [];
@@ -66,8 +65,6 @@ $(function() {
       }
     });
   };
-  
-  
   
   // 1. 点击按钮显示模态框
   $('#addBtn').click(function() {
@@ -136,7 +133,7 @@ $(function() {
   $('#form').bootstrapValidator({
     // 重置排除项
     excluded: [],
-  
+    
     // 指定校验小图标
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
@@ -227,7 +224,7 @@ $(function() {
   $("#form").on("success.form.bv", function( e ) {
     e.preventDefault();
     // 还需要 picName1 picAddr1 picName2 picAddr2 picName3 picAddr3
-
+    
     var paramsStr = $('#form').serialize();
     paramsStr += "&picName1=" + imgArr[0].picName + "&picAddr1=" + imgArr[0].picAddr;
     paramsStr += "&picName2=" + imgArr[1].picName + "&picAddr2=" + imgArr[1].picAddr;
@@ -259,5 +256,4 @@ $(function() {
     })
     
   })
-  
 })

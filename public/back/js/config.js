@@ -11,8 +11,8 @@ require.config({
     "template": "lib/artTemplate/template-web",
     "bootstrap-paginator": "lib/bootstrap-paginator/bootstrap-paginator.min",
     "echarts": "lib/echarts/echarts.min",
-    "jquery.ui.widget": "./lib/jquery-fileupload/jquery.ui.widget",
-    "jquery.fileupload": "./lib/jquery-fileupload/jquery.fileupload"
+    "jquery.ui.widget": "lib/jquery-fileupload/jquery.ui.widget",
+    "jquery.fileupload": "lib/jquery-fileupload/jquery.fileupload"
   },
   shim: {
     // 配置 bootstrap
@@ -26,9 +26,6 @@ require.config({
     },
     "bootstrap-paginator": {
       deps: ["bootstrap"]
-    },
-    "jquery.fileupload": {
-      deps: ["jquery"]
     },
     // 配置导出项
     "nprogress": {
