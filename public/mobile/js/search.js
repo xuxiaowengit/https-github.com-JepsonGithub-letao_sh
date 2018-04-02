@@ -48,7 +48,6 @@ $(function () {
   //3.5 重新设置到缓存里面
   //3.6 重新渲染
 
-
   //四种调用模式  调用模式不一样，function内部的this就不一样
   $(".lt_history").on("click", ".btn_delete", function () {
 
@@ -99,7 +98,6 @@ $(function () {
     }
     //获取了缓存的数组
     var arr = getHistory();
-
 
     //1. 如果有重复的，删除掉
     var index = arr.indexOf(key);//获取key在arr中的第一个索引
