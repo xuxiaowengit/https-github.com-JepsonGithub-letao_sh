@@ -99,4 +99,11 @@ img {
   margin: 0;
   color: #fff;
 }
+
+.lt_footer li.current a {
+  color: orange;
+}
+.lt_footer li.current p {
+  color: orange;
+}
 /* 乐淘公共底部 结束 */
