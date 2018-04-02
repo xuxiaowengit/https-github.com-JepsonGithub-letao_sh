@@ -1,27 +1,5 @@
 @charset "utf-8";
 
-/* search 开始 */
-.search {
-  padding: 10px;
-  position: relative;
-}
-.search .search_input {
-  height: 34px;
-  border: 1px solid #007aff;
-  font-size: 12px;
-  border-radius: 5px;
-  margin: 0;
-}
-.search .search_btn {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  border-radius: 0 5px 5px 0;
-}
-/* search 结束 */
-
-
-
 /* history 开始 */
 .history {
   padding: 10px;

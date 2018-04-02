@@ -63,7 +63,6 @@ img {
 /* 乐淘公共头部 结束 */
 
 
-
 /* lt_main 开始 */
 .lt_main {
   position: relative;
@@ -71,7 +70,6 @@ img {
   height: 100%;
 }
 /* lt_main 结束 */
-
 
 
 /* 乐淘公共底部 开始 */
@@ -108,3 +106,52 @@ img {
   color: orange;
 }
 /* 乐淘公共底部 结束 */
+
+
+
+
+/* search 开始 */
+.search {
+  padding: 10px;
+  position: relative;
+}
+.search .search_input {
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+}
+.search .search_btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 5px 5px 0;
+}
+/* search 结束 */
+
+
+
+/* product 开始 */
+.product {
+  padding: 10px;
+}
+.product_item {
+  width: 48%;
+  float: left;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.product_item:nth-child(odd) {
+  margin-right: 4%;
+}
+.product_item .price {
+  color: #FF3636;
+}
+.product_item .old {
+  text-decoration: line-through;
+}
+/* product 结束 */

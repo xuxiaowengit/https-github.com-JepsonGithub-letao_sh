@@ -17,26 +17,3 @@
 
 
 
-/* product 开始 */
-.product {
-  padding: 10px;
-}
-.product_item {
-  width: 48%;
-  float: left;
-  text-align: center;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-.product_item:nth-child(odd) {
-  margin-right: 4%;
-}
-.product_item .price {
-  color: #FF3636;
-}
-.product_item .old {
-  text-decoration: line-through;
-}
-/* product 结束 */

@@ -4,10 +4,10 @@
 
 $(function() {
 
-  // 用户获取 search_list 的值, 并且转换成数组, 方便操作
+  // 用户获取 search_history 的值, 并且转换成数组, 方便操作
   function getHistory() {
     // 得到 json 字符串
-    var history = localStorage.getItem("search_list") || "[]";
+    var history = localStorage.getItem("search_history") || "[]";
     // 将 json 字符串转换成真正的数组
     var arr = JSON.parse( history );
     return arr;
@@ -26,7 +26,7 @@ $(function() {
   $('.history').on("click", ".btn_empty", function() {
     mui.confirm("你是否要清空所有的历史记录?", "温馨提示", ["取消", "确定"], function( e ) {
       if ( e.index === 1 ) {
-        localStorage.removeItem("search_list");
+        localStorage.removeItem("search_history");
         render();
       }
     })
@@ -35,17 +35,12 @@ $(function() {
   // 3. 删除搜索列表
   $('.history').on("click", ".btn_delete", function() {
     var index = $(this).data("index");
-    
-    mui.confirm("你确定要删除吗?", "温馨提示", ["否", "是"], function( e ) {
-      if ( e.index === 1 ) {
-        var arr = getHistory();
-        // splice( 位置, 删除几个, 添加的项1, 添加的项2 )
-        arr.splice( index, 1 );
-        // 修改完数组需要进行持久化
-        localStorage.setItem( "search_list", JSON.stringify( arr ) );
-        render();
-      }
-    })
+    var arr = getHistory();
+    // splice( 位置, 删除几个, 添加的项1, 添加的项2 )
+    arr.splice( index, 1 );
+    // 修改完数组需要进行持久化
+    localStorage.setItem( "search_history", JSON.stringify( arr ) );
+    render();
   });
   
   // 4. 添加搜索列表
@@ -69,11 +64,14 @@ $(function() {
     }
     
     arr.unshift(key);
-    localStorage.setItem("search_list", JSON.stringify( arr ) );
+    localStorage.setItem("search_history", JSON.stringify( arr ) );
     render();
     
     // 清空 input 文本框
     $('.search_input').val("");
+    
+    // 跳转到 searchList 页面
+    location.href = "searchList.html?key=" + key;
   })
 
 })
