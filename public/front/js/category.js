@@ -13,13 +13,11 @@ $(function() {
     }
   });
   
-  
   // 左侧的事件委托
   $('#ul_left').on("click", "li", function() {
     $(this).addClass("current").siblings().removeClass("current");
     renderById($(this).data("id"));
   });
-  
   
   function renderById( id ) {
     $.ajax({

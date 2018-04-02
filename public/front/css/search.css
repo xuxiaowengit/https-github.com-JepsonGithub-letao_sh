@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* search 开始 */
+.search {
+  padding: 10px;
+  position: relative;
+}
+.search .search_input {
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+}
+.search .search_btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 5px 5px 0;
+}
+/* search 结束 */
+
+
+
+/* history 开始 */
+.history {
+  padding: 10px;
+  font-size: 12px;
+  color: #666;
+}
+.history_title span{
+  height: 30px;
+  line-height: 30px;
+}
+.history_content ul{
+  border: 1px dashed red;
+}
+.history_content li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-bottom: 1px dashed red;
+}
+.history_content li:last-child {
+  border-bottom: none;
+}
+.history_content li i {
+  height: 30px;
+  line-height: 30px;
+}
+/* history 结束 */
