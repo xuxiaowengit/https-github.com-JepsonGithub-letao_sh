@@ -25,7 +25,7 @@ $(function() {
       //如果有current这个类，换箭头
       $this.find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
     } else {
-      //如果没有current这个类，移除别人，添加自己,,, 让所有箭头都向下
+      //如果没有current这个类，移除别人，添加自己, 让所有箭头都向下
       $this.addClass("current").siblings().removeClass("current");
       $(".sort i").removeClass("fa-angle-up").addClass("fa-angle-down");
     }
