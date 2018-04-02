@@ -27,20 +27,9 @@
     <div class="lt_category_left">
       <div class="mui-scroll-wrapper">
         <div class="mui-scroll">
-          <ul>
-            <li class="current"><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
-            <li><a href="#">运动馆</a></li>
+          <ul id="ul_left">
+            <!-- 挖个坑 -->
+            <!--<li class="current"><a href="#">运动馆</a></li>-->
           </ul>
         </div>
       </div>
@@ -48,25 +37,14 @@
     <div class="lt_category_right">
       <div class="mui-scroll-wrapper">
         <div class="mui-scroll">
-          <ul class="mui-clearfix">
-            <li>
-              <a href="#">
-                <img src="images/brand1.png" alt="">
-                <p>耐克</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/brand1.png" alt="">
-                <p>耐克</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/brand1.png" alt="">
-                <p>耐克</p>
-              </a>
-            </li>
+          <ul class="mui-clearfix" id="ul_right">
+            <!-- 再挖个坑 -->
+            <!--<li>-->
+              <!--<a href="#">-->
+                <!--<img src="images/brand1.png" alt="">-->
+                <!--<p>耐克</p>-->
+              <!--</a>-->
+            <!--</li>-->
           </ul>
         </div>
       </div>
@@ -102,12 +80,31 @@
       </li>
     </ul>
   </div>
-
 </div>
+
+<script type="text/html" id="tpl_left">
+  {{ each rows v i }}
+    <li class="{{ i === 0 ? 'current' : '' }}" data-id="{{ v.id }}" ><a href="#">{{ v.categoryName }}</a></li>
+  {{ /each }}
+</script>
+
+<script type="text/html" id="tpl_right">
+  {{ each rows v i }}
+    <li>
+      <a href="#">
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </a>
+    </li>
+  {{ /each }}
+</script>
 
 
 <script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
+<script src="js/category.js"></script>
 
 </body>
 </html>
