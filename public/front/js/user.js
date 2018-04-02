@@ -7,15 +7,15 @@ $(function () {
   $.ajax({
     type:"get",
     url:"/user/queryUserMessage",
-    success:function (info) {
+    success:function (data) {
       
-      if(info.error=== 400){
+      if(data.error=== 400){
         location.href = "login.html";
       }
       
       //直接渲染用户信息
-      console.log(info);
-      $(".userinfo").html( template("tpl", info) );
+      console.log(data);
+      $(".userdata").html( template("tpl", data) );
       
       
     }
@@ -29,8 +29,8 @@ $(function () {
     $.ajax({
       type:"get",
       url:"/user/logout",
-      success:function (info) {
-        if(info.success) {
+      success:function (data) {
+        if(data.success) {
           location.href = "login.html";
         }
       }

@@ -29,12 +29,12 @@ $(function () {
         username: username,
         password: password
       },
-      success: function (info) {
-        if (info.error === 403) {
-          mui.toast(info.message);
+      success: function (data) {
+        if (data.error === 403) {
+          mui.toast(data.message);
         }
         
-        if (info.success) {
+        if (data.success) {
           //成功了，怎么办？
           //如果是购物车这类页面跳转过来的，需要跳回去
           //如果是直接访问的login页面，需要跳转到会员中心

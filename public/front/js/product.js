@@ -12,8 +12,8 @@ $(function () {
     data:{
       id:productId
     },
-    success:function (info) {
-      $(".mui-scroll").html( template("tpl", info));
+    success:function (data) {
+      $(".mui-scroll").html( template("tpl", data));
       //初始化轮播图
       mui(".mui-slider").slider({
         interval: 1000
@@ -53,9 +53,9 @@ $(function () {
         num:num,
         size:size
       },
-      success:function (info) {
+      success:function (data) {
         //如果登录了，添加成功
-        if(info.success){
+        if(data.success){
           mui.confirm("添加成功","温馨提示",["去购物车", "继续浏览"], function (e) {
             if(e.index == 0){
               location.href = "cart.html";
@@ -63,7 +63,7 @@ $(function () {
           });
         }
         //如果没登录，添加失败
-        if(info.error == 400){
+        if(data.error == 400){
           //说明没登录,跳转到登录页面, 把当前页的地址传递到了登录页面。
           location.href = "login.html?retUrl="+location.href;
         }
